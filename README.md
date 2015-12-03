@@ -2,9 +2,9 @@
 
 ## Admin ##
 
-You need to generate the admin password:
+Once container is running you can generate an admin password by running the following command:
 
 ```
-docker run -it yverry/openlitespeed:latest /usr/admin/misc/admpass.sh
+docker run -it dvenske/openlitespeed:latest /usr/local/lsws/admin/misc/admpass.sh
 ```
 
