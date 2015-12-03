@@ -22,8 +22,14 @@ RUN cd /usr/src/openlitespeed-1.4.14 && ./configure && \
 # openlite config
 VOLUME /usr/local/lsws
 
+# set admin password
+COPY admin_pwd.sh /tmp/admin_pwd.sh
+RUN /tmp/admin_pwd.sh
+
+COPY httpd_config /usr/local/lsws/conf/httpd_config
+
 # expose admin
-EXPOSE 7080 8088
+EXPOSE 7080 80
 
 #ENTRYPOINT ["/usr/bin/lswsctrl"]
 CMD ["/usr/local/lsws/bin/openlitespeed","-d"]
